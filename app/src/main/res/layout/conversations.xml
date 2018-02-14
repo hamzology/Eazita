@@ -36,8 +36,7 @@
         android:paddingRight="20dp"
         android:paddingEnd="20dp">
 
-
-
+        
         <EditText
             android:id="@+id/messageEditText"
             android:hint="Enter message"
