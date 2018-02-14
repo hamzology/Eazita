@@ -517,7 +517,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
         @Override
         protected void onPostExecute(final JSONObject success) {
             int error = success.optInt("error");
-            int reason = success.optString("reason");
+            String reason = success.optString("reason");
             SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
 
 
