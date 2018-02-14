@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class conversations extends Fragment implements View.OnClickListener {
                 "Chats");
         msg_edittext = (EditText) view.findViewById(R.id.messageEditText);
         msgListView = (ListView) view.findViewById(R.id.msgListView);
-        ImageButton sendButton = (ImageButton) view.findViewById(R.id.sendMessageButton);
+        Button sendButton = (Button) view.findViewById(R.id.sendMessageButton);
         sendButton.setOnClickListener(this);
 
         // ----Set autoscroll of listview when a new message arrives----//
@@ -110,6 +111,19 @@ public class conversations extends Fragment implements View.OnClickListener {
             chatAdapter.add(chatMessage);
             chatAdapter.notifyDataSetChanged();
         }
+
+        //fake resp
+
+        final ChatMessage chatMessage = new ChatMessage(user1, user2,
+                "jghjgh", "" + random.nextInt(1000), true);
+        chatMessage.setMsgID();
+        chatMessage.body = "jghjgh";
+        chatMessage.isMine = false;
+        chatMessage.Date = CommonMethods.getCurrentDate();
+        chatMessage.Time = CommonMethods.getCurrentTime();
+        msg_edittext.setText("");
+        chatAdapter.add(chatMessage);
+        chatAdapter.notifyDataSetChanged();
     }
 
     @Override
