@@ -466,7 +466,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Wrong response code: "+responseCode, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Wrong response code: "+responseCode, Toast.LENGTH_LONG).show();
                     resp.put("error", 1);
                     resp.put("reason", "Wrong response code: "+responseCode);
                     return resp;
@@ -475,10 +475,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
             }
             catch (Exception ex) {
-                //Toast.makeText(getApplicationContext(), "Failed to contact with server", Toast.LENGTH_LONG).show();
                 Log.e("params",ex.toString());
-                //Login to server failed...
-
                 return resp;
             }
 
