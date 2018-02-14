@@ -475,9 +475,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
             }
             catch (Exception ex) {
-                //Toast.makeText(getApplicationContext(), "Failed to contact with server", Toast.LENGTH_LONG).show();
                 Log.e("params",ex.toString());
-
                 return resp;
             }
 
@@ -519,7 +517,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
         @Override
         protected void onPostExecute(final JSONObject success) {
             int error = success.optInt("error");
-            String reason=success.optString("reason");
+            int reason = success.optString("reason");
             SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
 
 
@@ -588,7 +586,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
                     Toast.makeText(getApplicationContext(), body+"Invalid login credentials.", Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(getApplicationContext(), reason, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Connection with server failed.", Toast.LENGTH_LONG).show();
             }
 
         }
