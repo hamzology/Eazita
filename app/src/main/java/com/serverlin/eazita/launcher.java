@@ -19,7 +19,7 @@ public class launcher extends AppCompatActivity {
             if (sess.equals("logined")) {
                 Log.e("Auth", sess);
                 Intent intent_name = new Intent();
-                intent_name.setClass(this, Dashboard.class);
+                intent_name.setClass(this, msgs.class);
                 startActivity(intent_name);
                 finish();
             }

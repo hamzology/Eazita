@@ -1,10 +1,11 @@
-
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reyclerview_message_list"
@@ -15,27 +16,37 @@
         app:layout_constraintRight_toRightOf="parent">
     </android.support.v7.widget.RecyclerView>
 
-    <!-- A horizontal line between the chatbox and RecyclerView -->
     <ListView
         android:id="@+id/msgListView"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:background="#dfdfdf"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/form"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/form"
+        android:dividerHeight="0dp"
+        android:paddingBottom="10dp"
+        android:divider="@drawable/chat_divider"
+        android:paddingTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:stackFromBottom="false"
+        android:transcriptMode="normal"/>
 
     <LinearLayout
         android:id="@+id/form"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#91f1f1f1"
         android:orientation="horizontal"
-        android:minHeight="48dp"
-        android:background="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        android:paddingBottom="2dp"
+        android:minHeight="50dp"
+        android:layout_gravity="bottom"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="20dp"
+        android:paddingEnd="20dp">
+
 
         <EditText
             android:id="@+id/messageEditText"
@@ -45,7 +56,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_width="0dp"
-            android:textColor="#9f9f9f"
+            android:textColor="#3e3e3e"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:maxLines="6"/>
@@ -63,7 +74,7 @@
             android:textColor="#000"
             android:layout_gravity="bottom" />
 
-
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

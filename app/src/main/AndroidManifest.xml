@@ -30,23 +30,25 @@
         android:theme="@style/AppTheme">
         <service
             android:name=".backgroundservice"
-            android:exported="false"/>
+            android:exported="false" />
 
         <activity
             android:name=".Dashboard"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Login"
-            android:label="@string/title_activity_login">
-        </activity>
-        <activity android:theme="@android:style/Theme.NoDisplay" android:name=".launcher">
+            android:label="@string/title_activity_login"></activity>
+        <activity
+            android:name=".launcher"
+            android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".msgs"></activity>
     </application>
 
 </manifest>
