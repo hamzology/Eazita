@@ -111,7 +111,7 @@ public class Dashboard extends AppCompatActivity
                 fragment = new home();
                 break;
             case R.id.conversations:
-                fragment = new conversations();
+                fragment = new home();
                 break;
             case R.id.nav_camera:
                 fragment = new home();
