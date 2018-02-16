@@ -18,11 +18,12 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ChatAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<String> mDataSource;
-
 
     public ChatAdapter(Context context, ArrayList<String> items) {
         mContext = context;
@@ -47,13 +48,18 @@ public class ChatAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
-
+    public void add(String object) {
+        mDataSource.add(object);
+    }
     //4
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
         View rowView = mInflater.inflate(R.layout.row_item, parent, false);
 
+        TextView type = (TextView) rowView.findViewById(R.id.type);
+        Object datafor = getItem(position);
+        type.setText((String)datafor);
         return rowView;
     }
 }
