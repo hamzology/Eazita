@@ -55,7 +55,7 @@ public class ChatAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        View rowView = mInflater.inflate(R.layout.row_item, parent, false);
+        View rowView = mInflater.inflate(R.layout.sentrow, parent, false);
 
         TextView type = (TextView) rowView.findViewById(R.id.type);
         Object datafor = getItem(position);
