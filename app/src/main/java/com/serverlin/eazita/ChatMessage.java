@@ -7,20 +7,17 @@ package com.serverlin.eazita;
 import java.util.Random;
 
 public class ChatMessage {
+    public String body, sender, receiver, Status, Time, msgid;
+    public boolean isMine;
 
-    public String body, sender, receiver, senderName;
-    public String Date, Time;
-    public String msgid;
-    public boolean isMine;// Did I send the message.
-
-    public ChatMessage(String Sender, String Receiver, String messageString,
-                       String ID, boolean isMINE) {
-        body = messageString;
+    public ChatMessage(String Sender, String Receiver, String Body,
+                       String mid, String TIME, boolean isMINE){
+        body = Body;
         isMine = isMINE;
+        Time = TIME;
         sender = Sender;
-        msgid = ID;
+        msgid = mid;
         receiver = Receiver;
-        senderName = sender;
     }
 
     public void setMsgID() {

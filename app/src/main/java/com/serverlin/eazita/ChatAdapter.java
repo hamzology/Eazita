@@ -5,6 +5,7 @@ package com.serverlin.eazita;
  */
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,9 +24,9 @@ import org.w3c.dom.Text;
 public class ChatAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
-    private ArrayList<String> mDataSource;
+    private ArrayList<ChatMessage> mDataSource;
 
-    public ChatAdapter(Context context, ArrayList<String> items) {
+    public ChatAdapter(Context context, ArrayList<ChatMessage> items) {
         mContext = context;
         mDataSource = items;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -48,18 +49,32 @@ public class ChatAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
-    public void add(String object) {
-        mDataSource.add(object);
-    }
     //4
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        View rowView = mInflater.inflate(R.layout.sentrow, parent, false);
-
-        TextView type = (TextView) rowView.findViewById(R.id.type);
-        Object datafor = getItem(position);
-        type.setText((String)datafor);
+        ChatMessage message = (ChatMessage) mDataSource.get(position);
+        View rowView = convertView;
+        if (message.isMine){
+            rowView = mInflater.inflate(R.layout.sentrow, parent, false);
+            TextView type = (TextView) rowView.findViewById(R.id.msgcnt);
+            TextView name = (TextView) rowView.findViewById(R.id.text_message_name);
+            TextView ttime = (TextView) rowView.findViewById(R.id.text_message_time);
+            ttime.setText(message.Time);
+            name.setText("SENDER: " + String.format("%02d", new Random().nextInt(100)));
+            type.setText(message.body);
+        } else {
+            rowView = mInflater.inflate(R.layout.row_item, parent, false);
+            TextView type = (TextView) rowView.findViewById(R.id.msgcnt);
+            TextView name = (TextView) rowView.findViewById(R.id.text_message_name);
+            TextView ttime = (TextView) rowView.findViewById(R.id.text_message_time);
+            ttime.setText(message.Time);
+            name.setText("SENDER: " + String.format("%02d", new Random().nextInt(100)));
+            type.setText("This is a test message with Hello world.");
+        }
         return rowView;
+    }
+    public void add(ChatMessage object){
+        mDataSource.add(object);
     }
 }
