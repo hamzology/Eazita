@@ -18,7 +18,7 @@ public class msgs extends AppCompatActivity implements View.OnClickListener {
         public static ChatAdapter chatAdapter;
         public static ArrayList<ChatMessage> chatlist;
     private EditText msg_edittext;
-
+    private ListView mListView;
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -30,8 +30,8 @@ public class msgs extends AppCompatActivity implements View.OnClickListener {
         Button sendButton=(Button)findViewById(R.id.button_chatbox_send);
         sendButton.setOnClickListener(this);
 
-        RecyclerView mListView;
-                mListView = (RecyclerView) findViewById(R.id.list);
+
+                mListView = (ListView) findViewById(R.id.list);
                 ArrayList<ChatMessage> recipeList = new ArrayList<ChatMessage>();
                 chatAdapter = new ChatAdapter(this, recipeList);
                 mListView.setAdapter(chatAdapter);

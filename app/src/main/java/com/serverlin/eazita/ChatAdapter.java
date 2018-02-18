@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class ChatAdapter extends RecyclerView.Adapter {
+public class ChatAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<ChatMessage> mDataSource;
