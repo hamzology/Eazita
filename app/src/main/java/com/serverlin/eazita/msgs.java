@@ -3,6 +3,7 @@ package com.serverlin.eazita;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -29,8 +30,8 @@ public class msgs extends AppCompatActivity implements View.OnClickListener {
         Button sendButton=(Button)findViewById(R.id.button_chatbox_send);
         sendButton.setOnClickListener(this);
 
-                ListView mListView;
-                mListView = (ListView) findViewById(R.id.list);
+        RecyclerView mListView;
+                mListView = (RecyclerView) findViewById(R.id.list);
                 ArrayList<ChatMessage> recipeList = new ArrayList<ChatMessage>();
                 chatAdapter = new ChatAdapter(this, recipeList);
                 mListView.setAdapter(chatAdapter);

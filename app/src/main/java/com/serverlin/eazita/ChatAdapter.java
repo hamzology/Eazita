@@ -10,6 +10,7 @@ import java.util.Random;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -21,7 +22,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class ChatAdapter extends BaseAdapter {
+public class ChatAdapter extends RecyclerView.Adapter {
     private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<ChatMessage> mDataSource;
