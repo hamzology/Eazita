@@ -23,7 +23,8 @@ public class msgs extends AppCompatActivity implements View.OnClickListener {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.msgs);
-
+        getSupportActionBar().setTitle("Hello world App");
+        getSupportActionBar().setSubtitle("dfsad");
         msg_edittext = (EditText)findViewById(R.id.edittext_chatbox);
         Button sendButton=(Button)findViewById(R.id.button_chatbox_send);
         sendButton.setOnClickListener(this);
