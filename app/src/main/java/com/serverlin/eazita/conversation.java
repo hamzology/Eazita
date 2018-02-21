@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class conversation extends AppCompatActivity {
 
-    public static ChatAdapter chatAdapter;
+    public static ConvAdapter chatAdapter;
     private EditText msg_edittext;
     private ListView mListView;
     @Override
@@ -20,16 +20,17 @@ public class conversation extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Hello world App");
         getSupportActionBar().setSubtitle("dfsad");
+        msg_edittext = (EditText)findViewById(R.id.edittext_chatbox);
 
         mListView = (ListView) findViewById(R.id.list);
-        ArrayList<ChatMessage> recipeList = new ArrayList<ChatMessage>();
-        chatAdapter = new ChatAdapter(this, recipeList);
+        ArrayList<Conversations> recipeList = new ArrayList<Conversations>();
+        chatAdapter = new ConvAdapter(this, recipeList);
         mListView.setAdapter(chatAdapter);
 
         int sd=0;
         while (sd<=100){
             sd=sd+1;
-            final ChatMessage chatMessage = new ChatMessage("EZSMS", "923122699633",
+            final Conversations chatMessage = new Conversations("EZSMS", "923122699633",
                     "Message number "+sd, "", "12:00", true);
             msg_edittext.setText("");
             chatMessage.setMsgID();

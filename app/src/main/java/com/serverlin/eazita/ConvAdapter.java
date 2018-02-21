@@ -18,9 +18,9 @@ public class ConvAdapter extends BaseAdapter {
 
     private Context mContext;
     private LayoutInflater mInflater;
-    private ArrayList<ChatMessage> mDataSource;
+    private ArrayList<Conversations> mDataSource;
 
-    public ConvAdapter(Context context, ArrayList<ChatMessage> items) {
+    public ConvAdapter(Context context, ArrayList<Conversations> items) {
         mContext = context;
         mDataSource = items;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -47,7 +47,7 @@ public class ConvAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        ChatMessage message = (ChatMessage) mDataSource.get(position);
+        Conversations message = (Conversations) mDataSource.get(position);
         View rowView = convertView;
         if (message.isMine){
             rowView = mInflater.inflate(R.layout.sentrow, parent, false);
@@ -68,7 +68,7 @@ public class ConvAdapter extends BaseAdapter {
         }
         return rowView;
     }
-    public void add(ChatMessage object){
+    public void add(Conversations object){
         mDataSource.add(object);
     }
 }

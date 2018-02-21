@@ -19,7 +19,7 @@ public class launcher extends AppCompatActivity {
             if (sess.equals("logined")) {
                 Log.e("Auth", sess);
                 Intent intent_name = new Intent();
-                intent_name.setClass(this, msgs.class);
+                intent_name.setClass(this, conversation.class);
                 startActivity(intent_name);
                 finish();
             }
