@@ -47,25 +47,9 @@ public class ConvAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        Conversations message = (Conversations) mDataSource.get(position);
         View rowView = convertView;
-        if (message.isMine){
-            rowView = mInflater.inflate(R.layout.sentrow, parent, false);
-            TextView type = (TextView) rowView.findViewById(R.id.msgcnt);
-            TextView name = (TextView) rowView.findViewById(R.id.text_message_name);
-            TextView ttime = (TextView) rowView.findViewById(R.id.text_message_time);
-            ttime.setText(message.Time);
-            name.setText("SENDER: " + String.format("%02d", new Random().nextInt(100)));
-            type.setText(message.body);
-        } else {
-            rowView = mInflater.inflate(R.layout.row_item, parent, false);
-            TextView type = (TextView) rowView.findViewById(R.id.msgcnt);
-            TextView name = (TextView) rowView.findViewById(R.id.text_message_name);
-            TextView ttime = (TextView) rowView.findViewById(R.id.text_message_time);
-            ttime.setText(message.Time);
-            name.setText("SENDER: " + String.format("%02d", new Random().nextInt(100)));
-            type.setText("This is a test response with Hello world.");
-        }
+        rowView = mInflater.inflate(R.layout.convline, parent, false);
+
         return rowView;
     }
     public void add(Conversations object){
