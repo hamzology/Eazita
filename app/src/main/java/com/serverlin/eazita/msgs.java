@@ -35,6 +35,19 @@ public class msgs extends AppCompatActivity implements View.OnClickListener {
                 ArrayList<ChatMessage> recipeList = new ArrayList<ChatMessage>();
                 chatAdapter = new ChatAdapter(this, recipeList);
                 mListView.setAdapter(chatAdapter);
+
+                int sd=0;
+                while (sd<=100){
+                    sd=sd+1;
+                    final ChatMessage chatMessage = new ChatMessage("EZSMS", "923122699633",
+                            "Message number "+sd, "", "12:00", true);
+                    msg_edittext.setText("");
+                    chatMessage.setMsgID();
+                    chatMessage.body = "Message number "+sd;
+                    chatMessage.Time = CommonMethods.getCurrentTime();
+                    chatAdapter.add(chatMessage);
+                    chatAdapter.notifyDataSetChanged();
+                }
     }
 
 
