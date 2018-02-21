@@ -1,33 +1,26 @@
 package com.serverlin.eazita;
 
-/**
- * Created by hamza on 4/14/17.
- */
-
-import java.util.ArrayList;
-import java.util.Random;
-
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
+import java.util.Random;
 
-public class ChatAdapter extends BaseAdapter {
+/**
+ * Created by hamza on 2/21/18.
+ */
+
+public class ConvAdapter extends BaseAdapter {
+
     private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<ChatMessage> mDataSource;
 
-    public ChatAdapter(Context context, ArrayList<ChatMessage> items) {
+    public ConvAdapter(Context context, ArrayList<ChatMessage> items) {
         mContext = context;
         mDataSource = items;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class msgs extends AppCompatActivity implements View.OnClickListener {
 
         public static ChatAdapter chatAdapter;
-        public static ArrayList<ChatMessage> chatlist;
     private EditText msg_edittext;
     private ListView mListView;
     @Override
